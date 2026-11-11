@@ -1,0 +1,17 @@
+scenario: GH-SAC-MA
+action: gumbel
+reward: aligned
+w_soc_delta: 200.0
+curriculum: True
+seed: 42
+gamma: 0.999
+dwell_obs: 1
+w_veto: 0.05
+center: 0.001
+timesteps: 2000000
+min_dwell: 10
+plant: v3
+data_dir: data_1s
+timestamp: 20261018_140207
+obs_dim: 26
+act_dim: 5

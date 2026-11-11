@@ -1,0 +1,13 @@
+scenario: DH-SAC-MA
+action: argmax
+reward: aligned
+w_soc_delta: 200.0
+curriculum: True
+seed: 45
+timesteps: 2000000
+min_dwell: 10
+plant: v3
+data_dir: data_1s
+timestamp: 20260929_222946
+obs_dim: 25
+act_dim: 5

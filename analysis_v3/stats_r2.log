@@ -1,0 +1,43 @@
+SOC 50.0: ANOVA
+                   sum_sq    df       F  PR(>F)    eta2
+C(act)         1570.3152   1.0  2.7828  0.1211  0.1030
+C(rew)         5112.6813   2.0  4.5302  0.0342  0.3354
+C(act):C(rew)  1789.3890   2.0  1.5855  0.2449  0.1174
+Residual       6771.5210  12.0     NaN     NaN  0.4442 
+ Shapiro p 0.347  Levene p 0.753
+ perm p reward 0.0395  action 0.1334
+ bootstrap 95% CI eta2 reward [0.16 0.66]  action [0.   0.45]
+SOC 70.0: ANOVA
+                    sum_sq    df       F  PR(>F)    eta2
+C(act)          1401.4892   1.0  2.5373  0.1372  0.0720
+C(rew)         10453.5093   2.0  9.4626  0.0034  0.5372
+C(act):C(rew)    975.4095   2.0  0.8830  0.4388  0.0501
+Residual        6628.2837  12.0     NaN     NaN  0.3406 
+ Shapiro p 0.137  Levene p 0.732
+ perm p reward 0.0080  action 0.1499
+ bootstrap 95% CI eta2 reward [0.39 0.8 ]  action [0.   0.33]
+                            Coef. Std.Err.       z  P>|z|  [0.025 0.975]
+C(act)[T.G]                 0.903    0.591   1.528  0.127  -0.255  2.060
+C(rew)[T.MA]                0.160    0.591   0.270  0.787  -0.998  1.318
+C(rew)[T.Sep]              -0.071    0.591  -0.119  0.905  -1.228  1.087
+C(act)[T.G]:C(rew)[T.MA]   -1.331    0.835  -1.593  0.111  -2.969  0.306
+C(act)[T.G]:C(rew)[T.Sep]  -0.002    0.835  -0.003  0.998  -1.640  1.635
+Traceback (most recent call last):
+  File "/home/claude/v3/stats_r2.py", line 44, in <module>
+    w=m.wald_test(R,scalar=True); print(term,'Wald chi2',round(float(w.statistic),2),'p',round(float(w.pvalue),4))
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/statsmodels/base/model.py", line 2073, in wald_test
+    lc = mgr.get_linear_constraints(r_matrix, names)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/statsmodels/formula/_manager.py", line 670, in get_linear_constraints
+    lc = DesignInfo(variable_names).linear_constraint(constraints)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/patsy/design_info.py", line 555, in linear_constraint
+    return linear_constraint(constraint_likes, self.column_names)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/patsy/constraint.py", line 437, in linear_constraint
+    return LinearConstraint(variable_names, coefs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/patsy/constraint.py", line 63, in __init__
+    raise ValueError("wrong shape for coefs")
+ValueError: wrong shape for coefs

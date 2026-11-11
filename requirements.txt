@@ -1,0 +1,6 @@
+numpy
+pandas
+scipy
+gymnasium>=1.0
+stable-baselines3>=2.3
+torch

@@ -1,0 +1,13 @@
+scenario: GH-SAC-Eco
+action: gumbel
+reward: efc
+w_soc_delta: 120.0
+curriculum: True
+seed: 42
+timesteps: 500000
+min_dwell: 10
+plant: v3
+data_dir: data_1s
+timestamp: 20260926_184218
+obs_dim: 25
+act_dim: 5
